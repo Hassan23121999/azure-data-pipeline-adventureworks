@@ -1,0 +1,9 @@
+{
+	"name": "adf-aw-project-hassan",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c9055f5e-7c29-426d-8bc9-2b57220782e2",
+		"tenantId": "c9bc4cc1-ac6c-45a3-83cc-ed8eb73ef2c8"
+	}
+}
