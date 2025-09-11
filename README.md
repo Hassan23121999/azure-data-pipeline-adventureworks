@@ -20,6 +20,7 @@ Below is the architecture of the pipeline:
 ![Architecture](docs/architecture/Architecture.png)
 
 1. **Data Factory** – Orchestrates pipelines & ingests raw data into ADLS (Bronze).
+      ![Datafactory_pipeline](datafactory/adfpipeline.jpeg)
 2. **Databricks** – Executes transformations, cleansing, and joins to create Silver tables.
 3. **Synapse** – Defines Gold views (`fact_sales`, `dim_customers`, `dim_products`, etc.) for analytics.
 4. **Power BI** – Connects to Synapse (DirectQuery) for real-time dashboards.
