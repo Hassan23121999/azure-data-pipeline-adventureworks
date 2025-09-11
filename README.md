@@ -17,7 +17,7 @@ The pipeline follows the **Medallion Architecture (Bronze → Silver → Gold)**
 
 Below is the architecture of the pipeline:
 
-![Architecture](docs/architecture/Architecture.png)
+![Architecture](docs/architecture/Architecture.gif)
 
 1. **Data Factory** – Orchestrates pipelines & ingests raw data into ADLS (Bronze).
       ![Datafactory_pipeline](datafactory/adfpipeline.jpeg)
