@@ -1,0 +1,17 @@
+{
+	"name": "sales_trend",
+	"properties": {
+		"content": {
+			"query": "SELECT YEAR(OrderDate) AS Year, MONTH(OrderDate) AS Month,\n       SUM(SalesAmount) AS MonthlySales\nFROM gold.fact_sales\nGROUP BY YEAR(OrderDate), MONTH(OrderDate)\nORDER BY Year, Month;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

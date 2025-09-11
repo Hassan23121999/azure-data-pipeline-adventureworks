@@ -1,0 +1,17 @@
+{
+	"name": "top_10_customer_by_order",
+	"properties": {
+		"content": {
+			"query": "SELECT CustomerName, COUNT(DISTINCT OrderNumber) AS TotalOrders\nFROM gold.fact_sales\nGROUP BY CustomerName\nORDER BY TotalOrders DESC\nOFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

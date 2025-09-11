@@ -1,0 +1,17 @@
+{
+	"name": "top_10_customer_by_spend",
+	"properties": {
+		"content": {
+			"query": "SELECT CustomerName, SUM(SalesAmount) AS TotalSpend\nFROM gold.fact_sales\nGROUP BY CustomerName\nORDER BY TotalSpend DESC\nOFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

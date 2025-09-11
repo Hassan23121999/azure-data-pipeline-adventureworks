@@ -1,0 +1,17 @@
+{
+	"name": "fact_sale_table",
+	"properties": {
+		"content": {
+			"query": "CREATE OR ALTER VIEW gold.fact_sales AS\nSELECT\n    s.OrderDate,\n    s.OrderNumber,   -- ✅ Add this\n    c.[full name] AS CustomerName,\n    c.Gender,\n    c.AnnualIncome,\n    t.Region,\n    t.Country,\n    t.Continent,\n    p.ProductName,\n    pc.CategoryName,\n    psc.SubcategoryName,\n    s.OrderQuantity,\n    p.ProductPrice,\n    (s.OrderQuantity * p.ProductPrice) AS SalesAmount\nFROM gold.sales s\nJOIN gold.customers c\n    ON s.CustomerKey = c.CustomerKey\nJOIN gold.product p\n    ON s.ProductKey = p.ProductKey\nJOIN gold.product_subcategories psc\n    ON p.ProductSubcategoryKey = psc.ProductSubcategoryKey\nJOIN gold.product_categories pc\n    ON psc.ProductCategoryKey = pc.ProductCategoryKey\nJOIN gold.territories t\n    ON s.TerritoryKey = t.SalesTerritoryKey;\n\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "awdatabase",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

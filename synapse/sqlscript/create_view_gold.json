@@ -1,0 +1,17 @@
+{
+	"name": "create_view_gold",
+	"properties": {
+		"content": {
+			"query": "\nCREATE OR ALTER VIEW gold.calender\nAS\nSELECT * FROM\nOPENROWSET(\n    BULK 'https://awstoragedatalakeh.dfs.core.windows.net/silver/AdventureWorks_Calendar/',\n    FORMAT = 'PARQUET'\n) as QUER1\n\nCREATE OR ALTER VIEW gold.customers\nAS\nSELECT * FROM\nOPENROWSET(\n    BULK 'https://awstoragedatalakeh.dfs.core.windows.net/silver/AdventureWorks_Customers/',\n    FORMAT = 'PARQUET'\n) as QUER1\n\n\nCREATE OR ALTER VIEW gold.product_categories\nAS\nSELECT * FROM\nOPENROWSET(\n    BULK 'https://awstoragedatalakeh.dfs.core.windows.net/silver/AdventureWorks_Product_Categories/',\n    FORMAT = 'PARQUET'\n) as QUER1\n\nCREATE OR ALTER VIEW gold.product_subcategories\nAS\nSELECT * FROM\nOPENROWSET(\n    BULK 'https://awstoragedatalakeh.dfs.core.windows.net/silver/AdventureWorks_Product_Subcategories/',\n    FORMAT = 'PARQUET'\n) as QUER1\n\nCREATE OR ALTER VIEW gold.product\nAS\nSELECT * FROM\nOPENROWSET(\n    BULK 'https://awstoragedatalakeh.dfs.core.windows.net/silver/AdventureWorks_Products/',\n    FORMAT = 'PARQUET'\n) as QUER1\n\nCREATE OR ALTER VIEW gold.preturns\nAS\nSELECT * FROM\nOPENROWSET(\n    BULK 'https://awstoragedatalakeh.dfs.core.windows.net/silver/AdventureWorks_Returns/',\n    FORMAT = 'PARQUET'\n) as QUER1\n\nCREATE OR ALTER VIEW gold.sales\nAS\nSELECT * FROM\nOPENROWSET(\n    BULK 'https://awstoragedatalakeh.dfs.core.windows.net/silver/AdventureWorks_Sales/',\n    FORMAT = 'PARQUET'\n) as QUER1\n\nCREATE OR ALTER VIEW gold.territories\nAS\nSELECT * FROM\nOPENROWSET(\n    BULK 'https://awstoragedatalakeh.dfs.core.windows.net/silver/AdventureWorks_Territories/',\n    FORMAT = 'PARQUET'\n) as QUER1\n\n\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "awdatabase",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

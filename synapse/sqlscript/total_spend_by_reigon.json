@@ -1,0 +1,17 @@
+{
+	"name": "total_spend_by_reigon",
+	"properties": {
+		"content": {
+			"query": "SELECT Region, ROUND(SUM(SalesAmount),0) AS TotalSpend\nFROM gold.fact_sales\nGROUP BY Region\nORDER BY TotalSpend DESC;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
